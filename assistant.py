@@ -53,10 +53,6 @@ def get_search_data(search_term):
 
     return_string = ""
 
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
-    }
-
     # Get video data
 
     # Request payload (data you want to send in the POST request)
@@ -65,7 +61,7 @@ def get_search_data(search_term):
     }
 
     # Sending the POST request
-    response = requests.post(videos_search_url, json=data, headers=headers)
+    response = requests.post(videos_search_url, json=data, verify=False)
 
     # Extracting the response data
     return_string += "<h4>Here are some videos that might be helpful:<br></h4>"
@@ -89,7 +85,7 @@ def get_search_data(search_term):
     }
 
     # Sending the POST request
-    response = requests.post(notes_search_url, json=data, headers=headers)
+    response = requests.post(notes_search_url, json=data, verify=False)
 
     return_string += "<h4>Here are some content from the lecture notes that might be helpful:<br></h4>"
 
