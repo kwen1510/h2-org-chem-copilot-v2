@@ -48,9 +48,6 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 videos_search_url = st.secrets["VIDEO_SEARCH_URL"]
 notes_search_url = st.secrets["NOTES_SEARCH_URL"]
 
-print(videos_search_url)
-print(notes_search_url)
-
 # Function to get search through videos and lecture notes
 def get_search_data(search_term):
 
